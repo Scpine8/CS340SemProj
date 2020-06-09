@@ -10,33 +10,54 @@ starting on day of tenth death
 6. Exit the program
 
 """
-
+import collections
 import random
 
 # First, import a csv
 
+months = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December"
+}
+
 
 def organize_file_data():
     line1 = True
-    inputStream = open("partA_input_data.txt")
+    # inputStream = open("partA_input_data.txt")
 
     data = {}
 
-    for line in inputStream:
-        if not line1:
-            lineSplit = line.split(',')  # split the line into an array of values
-            date, day, month, year = lineSplit[0], lineSplit[1], lineSplit[2], lineSplit[3]
-            cases, deaths, country, population, continent = lineSplit[4], lineSplit[5], lineSplit[6], lineSplit[9], \
-                                                            lineSplit[10]
-            country_cont = (country, continent[:-1]) # country is parsed to erase automatic line break
-            country_cont_data = [date, day, month, year, cases, deaths, population]
+    with open("partA_input_data.txt") as inputStream:
+        for line in inputStream:
+            if not line1:
+                lineSplit = line.split(',')  # split the line into an array of values
+                date, day, month, year = lineSplit[0], lineSplit[1], lineSplit[2], lineSplit[3]
+                cases, deaths, country, population, continent = lineSplit[4], lineSplit[5], lineSplit[6], lineSplit[9], \
+                                                                lineSplit[10]
 
-            if country_cont not in data.keys():
-                data[country_cont] = [country_cont_data]
+                if continent[-1:] == '\n': # if the csv left a line break at the end
+                    country_cont = (country, continent[:-1]) # country is parsed to erase automatic line break
+                else:
+                    country_cont = (country, continent)
+                country_cont_data = [date, day, month, year, cases, deaths, population]
+
+                # Add the keys and values to 'data'
+                if country_cont not in data.keys():
+                    data[country_cont] = [country_cont_data]
+                else:
+                    data[country_cont].append(country_cont_data)
             else:
-                data[country_cont].append(country_cont_data)
-        else:
-            line1 = False
+                line1 = False
     return data
 
 
@@ -44,7 +65,6 @@ def getTotalCasesFromCont(dataLineList):
     cases = 0
     for dataline in dataLineList:
         cases += int(dataline[4])
-    # print("Cases: " + str(cases))
     return cases
 
 
@@ -52,8 +72,23 @@ def getTotalDeathsFromCont(dataLineList):
     deaths = 0
     for dataline in dataLineList:
         deaths += int(dataline[5])
-    # print("Deaths: " + str(deaths))
     return deaths
+
+def getPopCasesDeathsPerMonth(dataLineList):
+    monthsDict = {}
+    for dataLine in dataLineList:
+        month = dataLine[2]
+        cases = [4]
+        deaths = [5]
+        population = [6]
+        if month not in monthsDict.keys():
+            monthsDict[month] = [cases, deaths, population]
+        else:
+            monthsDict[month][0] += cases
+            monthsDict[month][1] += deaths
+            monthsDict[month][2] += population
+
+    return monthsDict
 
 def getCountries(dict):
     countries = []
@@ -109,12 +144,20 @@ class Response(object):
         print()
 
     def ListOneCountryPopCasesDeathsPerMonth(self):
-        print(getCountries(self.data))
-        print(random.choice(getCountries(self.data)))
+        randomCountry = random.choice(getCountries(self.data))
+        print(randomCountry[0])
+        print()
+        months_dict = getPopCasesDeathsPerMonth(self.data[randomCountry])
+        
+        for month in sorted(months_dict.keys()):
+            print(str(months[month]))
+            print("Cases: ", months_dict[month][0]+",", "Deaths: ", months_dict[month][1]+",", "Population: ", months_dict[month])
+
 
 def main():
     data = organize_file_data()
-    printIntro()
+    # printIntro()
+
 
     MyResponse = Response(data)
     while True:
@@ -127,6 +170,7 @@ def main():
             if 0 < number <= 6:  # Display cases and deaths per continent
                 print()
                 MyResponse.respond(number)
+                break
             else:
                 print("ERROR: the number must be between 1 and 6!")
 
