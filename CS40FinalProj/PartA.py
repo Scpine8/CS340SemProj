@@ -12,6 +12,7 @@ starting on day of tenth death
 """
 import collections
 import random
+from tabulate import tabulate
 
 # First, import a csv
 
@@ -74,19 +75,20 @@ def getTotalDeathsFromCont(dataLineList):
         deaths += int(dataline[5])
     return deaths
 
-def getPopCasesDeathsPerMonth(dataLineList):
+# GET: Pop, Cases, Deaths (per)
+def getPopCasesDeathsPerMonth(dataLineList): # TODO: fix population part
     monthsDict = {}
     for dataLine in dataLineList:
-        month = dataLine[2]
-        cases = [4]
-        deaths = [5]
-        population = [6]
+        month = int(dataLine[2])
+        cases = int(dataLine[4])
+        deaths = int(dataLine[5])
+        population = int(dataLine[6])
         if month not in monthsDict.keys():
             monthsDict[month] = [cases, deaths, population]
         else:
             monthsDict[month][0] += cases
             monthsDict[month][1] += deaths
-            monthsDict[month][2] += population
+            # monthsDict[month][2] = population
 
     return monthsDict
 
@@ -144,15 +146,26 @@ class Response(object):
         print()
 
     def ListOneCountryPopCasesDeathsPerMonth(self):
+        # Select a random country to display
         randomCountry = random.choice(getCountries(self.data))
+        # Print out the country's name
         print(randomCountry[0])
         print()
+        # Get the country's monthly data on cases, deaths, and population
         months_dict = getPopCasesDeathsPerMonth(self.data[randomCountry])
+        # Display the data:
+        table = []
+        sortedMonthsDictKeys = sorted(months_dict.keys())
+        # if december is in the months_dict, remove it from the end and add to the beginning
+        if sortedMonthsDictKeys[-1] == 12:
+            lastE = sortedMonthsDictKeys[-1:]
+            sortedMonthsDictKeys = lastE+sortedMonthsDictKeys[:-1]
+        # organize the data to be used in Tabulate
+        for key in sortedMonthsDictKeys:
+            tableData = [months[key]]+months_dict[key]
+            table+=[tableData]
+        print(tabulate(table, headers=['Month', 'Cases', 'Deaths', 'Population']))
         
-        for month in sorted(months_dict.keys()):
-            print(str(months[month]))
-            print("Cases: ", months_dict[month][0]+",", "Deaths: ", months_dict[month][1]+",", "Population: ", months_dict[month])
-
 
 def main():
     data = organize_file_data()
@@ -161,7 +174,7 @@ def main():
 
     MyResponse = Response(data)
     while True:
-        userInput = input("Enter here:")
+        userInput = input("Enter your selection:")
 
         if not userInput.isdigit():
             print("ERROR: input must be a number!")
@@ -170,7 +183,7 @@ def main():
             if 0 < number <= 6:  # Display cases and deaths per continent
                 print()
                 MyResponse.respond(number)
-                break
+                print()
             else:
                 print("ERROR: the number must be between 1 and 6!")
 
