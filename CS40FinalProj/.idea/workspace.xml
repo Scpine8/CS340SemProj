@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e78af64-f88a-4238-ac70-5e6bc3b8ab86" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PartB.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input_data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PartA.py" beforeDir="false" afterPath="$PROJECT_DIR$/PartA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/partA_output_data.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +31,28 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.PartB">
+    <configuration name="3layer_MLP_with_backprop_training" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS40FinalProj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Library/Mobile Documents/com~apple~CloudDocs/Documents/ACT 2020/CS340" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Library/Mobile Documents/com~apple~CloudDocs/Documents/ACT 2020/CS340/3layer_MLP_with_backprop_training.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="PartA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CS40FinalProj" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -50,9 +74,54 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="PartB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS40FinalProj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PartB.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="simple_2layer_ANN" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CS40FinalProj" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Library/Mobile Documents/com~apple~CloudDocs/Documents/ACT 2020/CS340" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Library/Mobile Documents/com~apple~CloudDocs/Documents/ACT 2020/CS340/simple_2layer_ANN.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.PartB" />
         <item itemvalue="Python.PartA" />
+        <item itemvalue="Python.3layer_MLP_with_backprop_training" />
+        <item itemvalue="Python.simple_2layer_ANN" />
       </list>
     </recent_temporary>
   </component>
@@ -70,38 +139,55 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592409446893">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="241" y="-872" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592535511291">
+      <screen x="-326" y="-1080" width="1920" height="1080" />
     </state>
     <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800/-309.-1080.1920.1080@0.0.1280.800" timestamp="1592409446893" />
-    <state width="1259" height="173" key="GridCell.Tab.0.bottom" timestamp="1592410107446">
+    <state x="241" y="-872" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592535511291" />
+    <state width="1259" height="365" key="GridCell.Tab.0.bottom" timestamp="1592615095061">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1899" height="365" key="GridCell.Tab.0.bottom/0.0.1280.800/-309.-1080.1920.1080@-309.-1080.1920.1080" timestamp="1592612625617" />
     <state width="1259" height="173" key="GridCell.Tab.0.bottom/0.0.1280.800/-309.-1080.1920.1080@0.0.1280.800" timestamp="1592410107446" />
-    <state width="1259" height="91" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1592236206841" />
+    <state width="1899" height="365" key="GridCell.Tab.0.bottom/0.0.1280.800/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592548711829" />
+    <state width="1259" height="365" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1592615095061" />
+    <state width="1899" height="365" key="GridCell.Tab.0.bottom/0.23.1280.727/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592546213891" />
     <state width="1259" height="212" key="GridCell.Tab.0.bottom/0.23.1280.727@0.23.1280.727" timestamp="1591287827847" />
-    <state width="1259" height="173" key="GridCell.Tab.0.center" timestamp="1592410107445">
+    <state width="1259" height="365" key="GridCell.Tab.0.center" timestamp="1592615095061">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1899" height="365" key="GridCell.Tab.0.center/0.0.1280.800/-309.-1080.1920.1080@-309.-1080.1920.1080" timestamp="1592612625615" />
     <state width="1259" height="173" key="GridCell.Tab.0.center/0.0.1280.800/-309.-1080.1920.1080@0.0.1280.800" timestamp="1592410107445" />
-    <state width="1259" height="91" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1592236206839" />
+    <state width="1899" height="365" key="GridCell.Tab.0.center/0.0.1280.800/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592548711828" />
+    <state width="1259" height="365" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1592615095061" />
+    <state width="1899" height="365" key="GridCell.Tab.0.center/0.23.1280.727/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592546213888" />
     <state width="1259" height="212" key="GridCell.Tab.0.center/0.23.1280.727@0.23.1280.727" timestamp="1591287827846" />
-    <state width="1259" height="173" key="GridCell.Tab.0.left" timestamp="1592410107444">
+    <state width="1259" height="365" key="GridCell.Tab.0.left" timestamp="1592615095060">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1899" height="365" key="GridCell.Tab.0.left/0.0.1280.800/-309.-1080.1920.1080@-309.-1080.1920.1080" timestamp="1592612625611" />
     <state width="1259" height="173" key="GridCell.Tab.0.left/0.0.1280.800/-309.-1080.1920.1080@0.0.1280.800" timestamp="1592410107444" />
-    <state width="1259" height="91" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1592236206838" />
+    <state width="1899" height="365" key="GridCell.Tab.0.left/0.0.1280.800/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592548711827" />
+    <state width="1259" height="365" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1592615095060" />
+    <state width="1899" height="365" key="GridCell.Tab.0.left/0.23.1280.727/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592546213887" />
     <state width="1259" height="212" key="GridCell.Tab.0.left/0.23.1280.727@0.23.1280.727" timestamp="1591287827845" />
-    <state width="1259" height="173" key="GridCell.Tab.0.right" timestamp="1592410107446">
+    <state width="1259" height="365" key="GridCell.Tab.0.right" timestamp="1592615095061">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
+    <state width="1899" height="365" key="GridCell.Tab.0.right/0.0.1280.800/-309.-1080.1920.1080@-309.-1080.1920.1080" timestamp="1592612625616" />
     <state width="1259" height="173" key="GridCell.Tab.0.right/0.0.1280.800/-309.-1080.1920.1080@0.0.1280.800" timestamp="1592410107446" />
-    <state width="1259" height="91" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1592236206840" />
+    <state width="1899" height="365" key="GridCell.Tab.0.right/0.0.1280.800/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592548711828" />
+    <state width="1259" height="365" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1592615095061" />
+    <state width="1899" height="365" key="GridCell.Tab.0.right/0.23.1280.727/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592546213889" />
     <state width="1259" height="212" key="GridCell.Tab.0.right/0.23.1280.727@0.23.1280.727" timestamp="1591287827846" />
     <state x="141" y="39" key="SettingsEditor" timestamp="1592234537608">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="141" y="39" key="SettingsEditor/0.0.1280.800/-309.-1080.1920.1080@0.0.1280.800" timestamp="1591799041027" />
     <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1592234537608" />
+    <state x="299" y="-839" width="670" height="676" key="search.everywhere.popup" timestamp="1592532934235">
+      <screen x="-326" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="299" y="-839" width="670" height="676" key="search.everywhere.popup/0.0.1280.800/-326.-1080.1920.1080@-326.-1080.1920.1080" timestamp="1592532934235" />
   </component>
 </project>
